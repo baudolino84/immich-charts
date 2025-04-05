@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name:  immich-pvc
+  labels:
+    app: immich-pvc
+  namespace: immich
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 200Gi
+  storageClassName: "immich-rook-cephfs" # Empty string must be explicitly set otherwise default StorageClass will be set

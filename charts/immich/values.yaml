@@ -53,6 +53,7 @@ postgresql:
         username: immich
         database: immich
         password: immich
+        existingSecret: immich-secret
   primary:
     containerSecurityContext:
       readOnlyRootFilesystem: false

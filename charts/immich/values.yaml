@@ -5,7 +5,7 @@
 # These entries are shared between all the Immich components
 
 env:
-  REDIS_HOSTNAME: '{{ printf "%s-redis-master" .Release.Name }}'
+  REDIS_HOSTNAME: redis-cluster.redis.svc.cluster.local
   DB_HOSTNAME: "{{ .Release.Name }}-postgresql"
   DB_USERNAME: "{{ .Values.postgresql.global.postgresql.auth.username }}"
   DB_DATABASE_NAME: "{{ .Values.postgresql.global.postgresql.auth.database }}"

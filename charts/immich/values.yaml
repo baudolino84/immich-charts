@@ -10,7 +10,7 @@ env:
   DB_USERNAME: baudolino
   DB_DATABASE_NAME: immichdb
   # -- You should provide your own secret outside of this helm-chart and use `postgresql.global.postgresql.auth.existingSecret` to provide credentials to the postgresql instance
-  DB_PASSWORD: 1_:@]mO:Fsh:cWB?GxN;<{Y+
+  DB_PASSWORD:
   IMMICH_MACHINE_LEARNING_URL: '{{ printf "http://%s-machine-learning:3003" .Release.Name }}'
 
 image:

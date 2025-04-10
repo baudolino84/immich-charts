@@ -5,12 +5,15 @@
 # These entries are shared between all the Immich components
 
 env:
-  REDIS_HOSTNAME: redis-cluster.redis.svc.cluster.local
-  DB_HOSTNAME: immichdb-primary.postgres-operator.svc
-  DB_USERNAME: baudolino
-  DB_DATABASE_NAME: immichdb
+  REDIS_HOSTNAME: 'valkey.valkey-operator-system.svc.cluster.local'
+  REDIS_PASSWORD:
+  DB_URL: 'postgresql://baudolino:password@immichdb-primary.postgres-operator.svc:5432/immichbasedb?sslmode=disable'
+  #DB_HOSTNAME: 
+  #DB_USERNAME: baudolino
+  #DB_DATABASE_NAME: immichdb
   # -- You should provide your own secret outside of this helm-chart and use `postgresql.global.postgresql.auth.existingSecret` to provide credentials to the postgresql instance
-  DB_PASSWORD:
+  #DB_PASSWORD:
+  DB_VECTOR_EXTENSION: 'pgvector'
   IMMICH_MACHINE_LEARNING_URL: '{{ printf "http://%s-machine-learning:3003" .Release.Name }}'
 
 image:

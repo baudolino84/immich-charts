@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: immich-service
-  namespace: immich-operator
+  namespace: immich
 spec:
   selector:
     app.kubernetes.io/instance: immich

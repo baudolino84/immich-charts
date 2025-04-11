@@ -15,6 +15,7 @@ metadata:
         proxy_set_header Connection "upgrade";
         proxy_cache_bypass $http_upgrade;
       }
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
   labels:
     app.kubernetes.io/name: immich
     app.kubernetes.io/instance: immich
@@ -30,7 +31,7 @@ spec:
       paths:
       - backend:
           service:
-            name: immich
+            name: immich-clusterip-service
             port:
               number: 80
         path: /
